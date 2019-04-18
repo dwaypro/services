@@ -9,15 +9,24 @@ class Arboles extends HTMLElement {
 
         const template = document.createElement('template');
         template.innerHTML = `
-           <h1> Arboles Works </h1>
-           <div id="app">
-                <h1>Hello App!</h1>
-                <p>
-                    <router-link to="/foo">Go to Foo</router-link>
-                    <router-link to="/bar">Go to Bar</router-link>
-                </p>
+        <div id="app">
+            <div class="">
+                <router-link to="/movies">Angular Movies</router-link>
+                <router-link to="/gearshare">Gear Share </router-link>
+            </div>
+
+            <div class="top-nav">
+
+            </div>
+
+            <div class="content">            
                 <router-view></router-view>
             </div>
+            
+            <div class="footer">
+
+            </div>            
+        </div>
         `
         // <button id="login">login</button>
         shadowRoot.appendChild(template.content.cloneNode(true));
@@ -37,8 +46,8 @@ class Arboles extends HTMLElement {
 
 
         const routes = [
-        { path: '/foo', component: Foo },
-        { path: '/bar', component: Bar }
+            { path: '/foo', component: Foo },
+            { path: '/bar', component: Bar }
         ]
 
         const router = new VueRouter({
